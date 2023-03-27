@@ -191,7 +191,7 @@ namespace NET.Utilities.Http
         {
             return await this.RetryAsync(async () => 
             {
-                return await base.GetAsync(requestUri, cancellationToken);
+                return await base.DeleteAsync(requestUri, cancellationToken);
             });
         }
 
@@ -199,7 +199,7 @@ namespace NET.Utilities.Http
         {
             return await this.RetryAsync(async () => 
             {
-                return await base.GetAsync(requestUri);
+                return await base.DeleteAsync(requestUri);
             });
         }
 
@@ -207,7 +207,7 @@ namespace NET.Utilities.Http
         {
             return await this.RetryAsync(async () => 
             {
-                return await base.GetAsync(requestUri, cancellationToken);
+                return await base.DeleteAsync(requestUri, cancellationToken);
             });
         }
 
