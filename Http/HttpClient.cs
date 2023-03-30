@@ -228,7 +228,7 @@ namespace NET.Utilities.Http
                     return result;
                 }
 
-                await Task.Delay(TimeoutDuration);
+                await Task.Delay(TimeoutDuration * retries);
             }
 
             return result;
