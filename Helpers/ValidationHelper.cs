@@ -1,10 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-
 namespace NET.Utilities.Helpers
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    
+    /// Summary:
+    ///     A collection of validation helper methods.
     public static class ValidationHelper
     {
         public static bool ValidateEntity(object obj)

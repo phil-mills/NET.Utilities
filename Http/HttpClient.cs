@@ -6,9 +6,11 @@ namespace NET.Utilities.Http
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
-
+    
+    /// Summary:
+    ///     HttpClient retry pattern, used to allow transient error codes retry until a max limit is reached.
     public class HttpClient : System.Net.Http.HttpClient
-    {
+    {  
         public int MaxRetries { get; set; } = 5;
 
         public int TimeoutDuration { get; set; } = 500;
