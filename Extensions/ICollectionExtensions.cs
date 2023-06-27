@@ -16,5 +16,12 @@ namespace NET.Utilities.Extensions
 
             return items.ElementAt(index);
         }
+
+        public static IEnumerable<IEnumerable<T>> Partition<T>(this ICollection<T> values, int chunkSize)
+        {
+            return values.Select((x, i) => new { Index = i, Value = x })
+                .GroupBy(x => x.Index / chunkSize)
+                .Select(x => x.Select(v => v.Value).ToList());
+        }
     }
 }
