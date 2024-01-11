@@ -39,5 +39,15 @@ namespace NET.Utilities.Extentions
 
              return destination;
         }
+
+        public static string ParseAny(this object obj)
+	    {
+    		if (obj == null)
+    		{
+    			return string.Empty;
+    		}
+    		
+    	    return obj.ToString();
+	    }
     }
 }
