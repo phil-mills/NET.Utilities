@@ -23,5 +23,13 @@ namespace NET.Utilities.Extensions
                 .GroupBy(x => x.Index / chunkSize)
                 .Select(x => x.Select(v => v.Value).ToList());
         }
+
+        public static (ICollection<T> left, ICollection<T> right) SymmetricDifference<T>(this ICollection<T> values, ICollection<T> other)
+        {
+            var left = values.Except(other).ToList();
+            var right = other.Except(values).ToList();
+
+            return (left, right);
+        }
     }
 }
