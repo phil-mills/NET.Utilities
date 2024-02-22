@@ -31,7 +31,7 @@ namespace NET.Utilities.Extensions
             }
         }
 
-        public static (IEnumerable<T> left, IEnumerable<T> right) SymmetricDifference<T>(this IEnumerable<T> values, IEnumerable<T> other)
+        public static (IEnumerable<T> Left, IEnumerable<T> Right) SymmetricDifference<T>(this IEnumerable<T> values, IEnumerable<T> other)
         {
             var left = values.Except(other);
             var right = other.Except(values);
