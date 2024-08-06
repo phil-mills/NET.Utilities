@@ -31,12 +31,12 @@ namespace NET.Utilities.Extensions
             }
         }
 
-        public static (IEnumerable<T> Left, IEnumerable<T> Right) SymmetricDifference<T>(this IEnumerable<T> values, IEnumerable<T> other)
+        public static (IEnumerable<T> Left, IEnumerable<T> Right) SymmetricDifference<T>(this IEnumerable<T> left, IEnumerable<T> right, bool combineResults = true)
         {
-            var left = values.Except(other);
-            var right = other.Except(values);
+            if (!combineResults)
+                return (left.Except(right), right.Except(left));
 
-            return (left, right);
+            return (left.Except(right).Union(right.Except(left)), null);
         }
     }
 }
